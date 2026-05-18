@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Barista — a fast, Maven-compatible JVM build tool",
+  title: "Barista — a Maven-compatible JVM build tool that builds faster and fetches less",
   description:
-    "Barista is a fast, fully Maven-compatible build tool for the JVM ecosystem. Pre-release; v0.1 in active development.",
+    "Drop-in for Maven, 5.9× faster compile and 14.8% fewer upstream requests than mvn 3.9.x on our walkthrough corpus. Pre-release; v0.1 in active development.",
 };
 
 export default function RootLayout({

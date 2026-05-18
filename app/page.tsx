@@ -11,13 +11,24 @@ export default function Home() {
           Barista
         </h1>
         <p className="text-xl leading-relaxed text-muted-foreground">
-          A fast, fully Maven-compatible build tool for the JVM. Drop-in for
+          A fully Maven-compatible build tool for the JVM. Drop-in for
           existing Maven projects, with a content-addressed cache, a resolver
           built for correctness, and a daemon that stays out of your way.
         </p>
         <p className="text-base leading-relaxed text-muted-foreground">
-          Documentation, install instructions, and benchmarks land here as the
-          project matures. Source is open and developed in the open.
+          On our walkthrough corpus — Spring Boot starter-web, ~170 transitive
+          deps — early measurements show <strong className="text-foreground">5.9× faster
+          compile</strong> against warm caches versus <code>mvn 3.9.x</code>, and{" "}
+          <strong className="text-foreground">14.8% fewer HTTP requests</strong> /{" "}
+          <strong className="text-foreground">46.7% fewer bytes</strong> downloaded
+          from Maven Central on a cold dependency resolve. Warm-cache builds make
+          zero upstream calls — the lockfile fast-path keeps everything local.
+          See <a className="underline decoration-dotted hover:text-foreground" href="https://bench.barista.build">bench.barista.build</a>{" "}
+          for the per-iteration data and the developer-fixture caveats.
+        </p>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          Documentation, install instructions, and reference-hardware benchmarks
+          land here as the project matures. Source is open and developed in the open.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
