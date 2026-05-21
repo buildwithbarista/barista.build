@@ -1,21 +1,31 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const interTight = Inter_Tight({
   subsets: ["latin"],
+  variable: "--font-inter-tight",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Barista — a Maven-compatible JVM build tool that builds faster and fetches less",
+  title: "Barista — A faster pour for Maven",
   description:
-    "Drop-in for Maven, 5.9× faster compile and 14.8% fewer upstream requests than mvn 3.9.x on our walkthrough corpus. Pre-release; v0.1 in active development.",
+    "A Maven-compatible build tool for the JVM, written in Rust: a native dependency resolver, a content-addressed cache, and a warm-JVM worker pool. Pre-release; v0.1 in active development.",
 };
 
 export default function RootLayout({
@@ -26,9 +36,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${interTight.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>
+        <div className="grain" aria-hidden="true" />
+        {children}
+      </body>
     </html>
   );
 }
