@@ -1,42 +1,60 @@
 import Link from "next/link";
 import { DocsNav } from "@/components/docs-nav";
 
+const GITHUB = "https://github.com/buildwithbarista/barista";
+const BENCH = "https://bench.barista.build";
+
 export default function DocsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6">
-      <header className="flex items-center justify-between border-b border-border py-4">
-        <Link href="/" className="text-sm font-semibold tracking-tight text-foreground">
-          Barista
-        </Link>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <Link href="/docs/getting-started" className="hover:text-foreground">
-            Docs
+    <>
+      <nav className="nav">
+        <div className="nav-inner">
+          <Link className="brand" href="/">
+            <span className="brand-mark" aria-hidden="true" />
+            <span>barista</span>
           </Link>
-          <a href="https://bench.barista.build" className="hover:text-foreground">
-            Benchmarks
-          </a>
-          <a
-            href="https://github.com/buildwithbarista/barista"
-            className="hover:text-foreground"
-          >
-            GitHub
-          </a>
-        </div>
-      </header>
-      <div className="flex flex-1 flex-col gap-10 py-10 md:flex-row md:gap-14">
-        <aside className="md:w-56 md:shrink-0">
-          <div className="md:sticky md:top-10">
-            <DocsNav />
+          <div className="nav-links">
+            <Link href="/" className="hide-sm">
+              Home
+            </Link>
+            <Link href="/docs/getting-started" className="active hide-sm">
+              Docs
+            </Link>
+            <a href={BENCH} className="hide-sm">
+              Benchmarks
+            </a>
+            <a className="nav-cta" href={GITHUB}>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+              </svg>
+              <span>Star on GitHub</span>
+            </a>
           </div>
-        </aside>
-        <main className="min-w-0 flex-1">
-          <article className="docs-prose max-w-3xl">{children}</article>
-        </main>
+        </div>
+      </nav>
+
+      <div className="wrap docs-layout">
+        <DocsNav />
+        <main className="docs-main">{children}</main>
       </div>
-    </div>
+
+      <footer className="wrap">
+        <div>
+          <span className="brand" style={{ fontSize: "16px" }}>
+            <span className="brand-mark" style={{ width: "18px", height: "18px" }} /> barista.build
+          </span>
+          <span style={{ marginLeft: "14px" }}>© Bluminal Labs LLC · v0.1 preview</span>
+        </div>
+        <div className="links">
+          <a href={GITHUB}>GitHub</a>
+          <Link href="/docs/getting-started">Docs</Link>
+          <a href={BENCH}>Benchmarks</a>
+        </div>
+      </footer>
+    </>
   );
 }

@@ -1810,3 +1810,111 @@ footer .links { display: flex; gap: 22px; }
   flex-shrink: 0;
   padding-top: 1px;
 }
+
+/* ─────────────────────────────────────────────────────────────────
+ *  Multi-page docs — element styles for hand-authored page content.
+ *  (Complements the design's .docs-main / .docs-side rules above.)
+ * ───────────────────────────────────────────────────────────────── */
+.docs-main h1 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px;
+  scroll-margin-top: 80px;
+}
+.docs-main h1 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+.docs-main .lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  max-width: 64ch;
+  margin: 0 0 8px;
+  text-wrap: pretty;
+}
+.docs-main a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 120ms;
+}
+.docs-main a:hover {
+  text-decoration-color: var(--accent);
+}
+.docs-main ul:not(.bullets),
+.docs-main ol {
+  color: var(--fg-2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  padding-left: 1.3rem;
+  margin: 12px 0;
+}
+.docs-main ul:not(.bullets) {
+  list-style: disc;
+}
+.docs-main ol {
+  list-style: decimal;
+}
+.docs-main li {
+  margin: 6px 0;
+}
+.docs-main li::marker {
+  color: var(--fg-4);
+}
+.docs-main pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+.docs-main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 13.5px;
+}
+.docs-main table th,
+.docs-main table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+}
+.docs-main table th {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  font-weight: 500;
+}
+.docs-main table td {
+  color: var(--fg-2);
+}
+.docs-main table code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  padding: 1px 5px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  color: var(--fg);
+}
+.docs-main blockquote {
+  border-left: 3px solid var(--accent-dim);
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 18px 0;
+  color: var(--fg-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
