@@ -70,6 +70,48 @@ export default function Home() {
             </Link>
           </div>
 
+          <p
+            style={{
+              marginTop: "14px",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              flexWrap: "wrap",
+              fontFamily: "var(--font-mono)",
+              fontSize: "12px",
+              color: "var(--fg-4)",
+              letterSpacing: "0.02em",
+            }}
+          >
+            <span
+              style={{
+                color: "var(--accent)",
+                border: "1px solid var(--accent-dim)",
+                borderRadius: "999px",
+                padding: "2px 9px",
+                fontSize: "10.5px",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              Coming soon
+            </span>
+            <span>
+              Homebrew tap publishes with v0.1 —{" "}
+              <Link
+                href="/docs/install"
+                style={{
+                  color: "var(--fg-3)",
+                  textDecoration: "underline",
+                  textDecorationColor: "var(--line)",
+                  textUnderlineOffset: "3px",
+                }}
+              >
+                build from source today &rarr;
+              </Link>
+            </span>
+          </p>
+
           <div className="hero-strip">
             <div>
               <div className="num">5.9×</div>
@@ -503,6 +545,41 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
+            <p
+              style={{
+                marginTop: "16px",
+                fontFamily: "var(--font-mono)",
+                fontSize: "12px",
+                color: "var(--fg-4)",
+                letterSpacing: "0.02em",
+              }}
+            >
+              <span
+                style={{
+                  color: "var(--accent)",
+                  border: "1px solid var(--accent-dim)",
+                  borderRadius: "999px",
+                  padding: "2px 9px",
+                  fontSize: "10.5px",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Coming soon
+              </span>{" "}
+              — Homebrew tap publishes with v0.1.{" "}
+              <Link
+                href="/docs/install"
+                style={{
+                  color: "var(--fg-3)",
+                  textDecoration: "underline",
+                  textDecorationColor: "var(--line)",
+                  textUnderlineOffset: "3px",
+                }}
+              >
+                Build from source today &rarr;
+              </Link>
+            </p>
           </div>
         </section>
 
