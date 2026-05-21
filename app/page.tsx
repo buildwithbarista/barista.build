@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
@@ -27,15 +28,34 @@ export default function Home() {
           for the per-iteration data and the developer-fixture caveats.
         </p>
         <p className="text-base leading-relaxed text-muted-foreground">
-          Documentation, install instructions, and reference-hardware benchmarks
-          land here as the project matures. Source is open and developed in the open.
+          Documentation is live and growing — start with{" "}
+          <Link
+            className="underline decoration-dotted hover:text-foreground"
+            href="/docs/getting-started"
+          >
+            getting started
+          </Link>
+          . Reference-hardware benchmarks are published at{" "}
+          <a
+            className="underline decoration-dotted hover:text-foreground"
+            href="https://bench.barista.build"
+          >
+            bench.barista.build
+          </a>
+          . Source is open and developed in the open.
         </p>
         <div className="flex flex-wrap gap-3">
+          <Link
+            href="/docs/getting-started"
+            className={buttonVariants({ size: "lg" })}
+          >
+            Read the docs
+          </Link>
           <a
             href="https://github.com/buildwithbarista/barista"
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonVariants({ size: "lg" })}
+            className={buttonVariants({ variant: "outline", size: "lg" })}
           >
             View on GitHub
           </a>
