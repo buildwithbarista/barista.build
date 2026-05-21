@@ -55,9 +55,9 @@ export default function Home() {
           <p className="hero-sub">
             Barista is a Maven-compatible build tool for the JVM, written in Rust. The
             same <code>pom.xml</code>, the same <code>~/.m2</code>, the same artifacts. A
-            native dependency resolver and a content-addressed cache make resolution fast
-            today; a warm-JVM <em style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", color: "var(--accent)" }}>barback</em> worker pool for plugin execution is
-            landing next.
+            native dependency resolver and a content-addressed cache make resolution fast,
+            and a warm-JVM <em style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", color: "var(--accent)" }}>barback</em> worker pool runs the full Maven
+            build on macOS and Linux.
           </p>
 
           <div className="hero-ctas">
@@ -195,8 +195,8 @@ export default function Home() {
                 <p>
                   Dependency resolution runs in Rust with HTTP/2 multiplexed POM fetching
                   and a real, checksum-verified lockfile. A warm{" "}
-                  <em style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", color: "var(--accent)" }}>barback</em> daemon to hold JIT state and plugin
-                  classloaders for execution is landing next.
+                  <em style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", color: "var(--accent)" }}>barback</em> daemon holds JIT state and plugin
+                  classloaders and runs the full Maven lifecycle on macOS and Linux.
                 </p>
                 <div className="meta">
                   <span>cold resolve</span>
@@ -260,8 +260,8 @@ export default function Home() {
                 </h2>
                 <p className="section-lede">
                   Barista keeps Maven&rsquo;s lifecycle verbs and adds a handful of its own
-                  for resolution and caching. The signature verbs below work today; the
-                  Maven lifecycle drop-ins are landing.
+                  for resolution and caching. The signature verbs below plus the Maven
+                  lifecycle drop-ins build your project on macOS and Linux today.
                 </p>
               </div>
             </header>
@@ -301,9 +301,8 @@ export default function Home() {
               <div className="compat-block fade-in">
                 <h4>Drop-in surface</h4>
                 <p>
-                  The Maven lifecycle phases are mirrored verb-for-verb. Execution routes
-                  through the <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.88em", color: "var(--fg)", background: "var(--bg)", border: "1px solid var(--line-soft)", padding: "1px 6px", borderRadius: "4px" }}>barback</code> daemon and is still landing — they print a
-                  &ldquo;not yet executable&rdquo; notice for now.
+                  The Maven lifecycle phases are mirrored verb-for-verb. On macOS and Linux
+                  they execute through the <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.88em", color: "var(--fg)", background: "var(--bg)", border: "1px solid var(--line-soft)", padding: "1px 6px", borderRadius: "4px" }}>barback</code> daemon, building byte-identically to Maven (single-module proven; reactor maturing; needs a JDK). Windows lifecycle execution is landing — use <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.88em", color: "var(--fg)", background: "var(--bg)", border: "1px solid var(--line-soft)", padding: "1px 6px", borderRadius: "4px" }}>--no-daemon</code> to fork to Maven there.
                 </p>
                 <ul className="compat-list">
                   <li>clean</li>
@@ -426,7 +425,7 @@ export default function Home() {
                     <span className="num">02</span>
                     <span>
                       <strong>barback</strong> — embedded Maven 4 core in a warm worker
-                      pool, plugin classloaders cached. Lifecycle execution landing.
+                      pool, plugin classloaders cached. Runs the full lifecycle on macOS and Linux.
                     </span>
                   </li>
                   <li>

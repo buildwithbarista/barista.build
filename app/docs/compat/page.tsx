@@ -95,11 +95,14 @@ barista pull --maven-compat 4.0    # Maven 4.0-compatible behavior`}</code>
       </p>
       <ul>
         <li>
-          <strong>Lifecycle execution.</strong> The drop-in lifecycle commands
-          (<code>compile</code>, <code>test</code>, <code>package</code>, …)
-          are not yet executable; they route through the <code>barback</code>{" "}
-          daemon in a later milestone. Resolve and cache with{" "}
-          <code>barista pull</code>, then build with <code>mvn</code>.
+          <strong>Windows lifecycle execution.</strong> The lifecycle commands
+          build via the <code>barback</code> daemon on macOS and Linux, but the
+          daemon isn&rsquo;t wired on Windows yet — pass <code>--no-daemon</code>{" "}
+          there to fork to your installed <code>mvn</code>.
+        </li>
+        <li>
+          <strong>Multi-module reactor.</strong> Single-module builds are
+          proven; reactor (multi-module) support is still maturing.
         </li>
         <li>
           <strong>Tap routing.</strong> Remote caches / workers can be

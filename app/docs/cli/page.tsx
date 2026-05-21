@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "CLI reference — Barista",
   description:
-    "Every Barista command and the global flags, including which commands execute today and which are still landing.",
+    "Every Barista command and the global flags, including the Maven lifecycle that builds on macOS and Linux.",
 };
 
 export default function CliReferencePage() {
@@ -119,16 +119,18 @@ export default function CliReferencePage() {
         &ldquo;not yet implemented&rdquo; in this build.
       </p>
 
-      <h2>Maven lifecycle commands (planned)</h2>
+      <h2>Maven lifecycle commands</h2>
       <p>
         <code>clean</code>, <code>compile</code>, <code>test</code>,{" "}
         <code>package</code>, <code>verify</code>, <code>install</code>,{" "}
         <code>deploy</code>, and <code>site</code> are drop-in synonyms for{" "}
-        <code>mvn &lt;phase&gt;</code>. Execution routes through the warm-JVM{" "}
-        <code>barback</code> daemon, which is still landing — in this
-        pre-release these print a structured &ldquo;not yet executable&rdquo;
-        notice and exit. Until then, run <code>barista pull</code> to resolve
-        and warm the cache, then build with <code>mvn</code>.
+        <code>mvn &lt;phase&gt;</code>. On <strong>macOS and Linux</strong> they
+        execute through the warm-JVM <code>barback</code> daemon (embedded
+        Maven 4), building byte-identically to Maven — single-module proven,
+        multi-module reactor maturing; the daemon needs a JDK. On{" "}
+        <strong>Windows</strong>, lifecycle execution isn&rsquo;t wired yet:
+        they print a &ldquo;not yet executable&rdquo; notice — pass{" "}
+        <code>--no-daemon</code> to fork to your installed <code>mvn</code>.
       </p>
 
       <h2>Global flags</h2>

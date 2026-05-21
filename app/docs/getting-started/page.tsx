@@ -21,8 +21,9 @@ export default function GettingStartedPage() {
         Pre-release. v0.1 is in active development — command surfaces and
         on-disk formats may change before the first tagged release. The
         Maven lifecycle commands (<code>compile</code>, <code>test</code>,{" "}
-        <code>package</code>, …) are still landing; see{" "}
-        <a href="#today">what works today</a> below.
+        <code>package</code>, …) build your project on macOS and Linux via the{" "}
+        <code>barback</code> daemon; Windows lifecycle execution is still
+        landing — see <a href="#today">what works today</a> below.
       </blockquote>
 
       <h2>Prerequisites</h2>
@@ -74,21 +75,24 @@ barista pour                # materialize locked artifacts into ~/.m2`}</code>
 
       <h2>Running your build</h2>
       <p>
-        The Maven lifecycle commands — <code>barista clean</code>,{" "}
-        <code>compile</code>, <code>test</code>, <code>package</code>,{" "}
-        <code>verify</code>, <code>install</code>, <code>deploy</code>,{" "}
-        <code>site</code> — are the planned drop-in surface for{" "}
-        <code>mvn &lt;phase&gt;</code>. They route through the warm-JVM{" "}
-        <code>barback</code> daemon, which is still being wired up; in this
-        pre-release they print a structured &ldquo;not yet executable&rdquo;
-        notice rather than building.
+        On <strong>macOS and Linux</strong>, the Maven lifecycle commands —{" "}
+        <code>barista clean</code>, <code>compile</code>, <code>test</code>,{" "}
+        <code>package</code>, <code>verify</code>, <code>install</code>,{" "}
+        <code>deploy</code> — execute through the warm-JVM <code>barback</code>{" "}
+        daemon (embedded Maven 4), building byte-identically to{" "}
+        <code>mvn &lt;phase&gt;</code>. Single-module builds are proven;
+        multi-module reactor support is maturing. The daemon needs a JDK.
       </p>
+      <pre>
+        <code>{`cd path/to/your-maven-project
+barista pull       # resolve + cache + write barista.lock
+barista verify     # build through the warm barback daemon`}</code>
+      </pre>
       <p>
-        Until lifecycle execution lands, the practical flow is: let{" "}
-        <code>barista pull</code> resolve and warm <code>~/.m2/repository</code>,
-        then run your build with <code>mvn</code> as usual. Because the
-        artifacts are already local and verified, the build does no further
-        dependency fetching.
+        On <strong>Windows</strong>, lifecycle execution isn&rsquo;t wired yet:
+        pass <code>--no-daemon</code> to fork to your installed <code>mvn</code>,
+        or run <code>mvn</code> after <code>barista pull</code> has warmed{" "}
+        <code>~/.m2/repository</code>.
       </p>
 
       <h2>Project setup helpers</h2>

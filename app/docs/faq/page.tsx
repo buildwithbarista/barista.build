@@ -79,10 +79,13 @@ export default function FaqPage() {
 
       <h2>Is it ready for production?</h2>
       <p>
-        Not yet. v0.1 is in active development; command surfaces and on-disk
-        formats may change until the first tagged release. The
-        dependency-resolution and caching path is the part that is ready to
-        try today — see <a href="/docs/getting-started">Getting started</a>.
+        Not yet — it&rsquo;s a pre-release. v0.1 is in active development;
+        command surfaces and on-disk formats may change until the first tagged
+        release. That said, on macOS and Linux it already builds your project
+        end-to-end via the <code>barback</code> daemon (single-module proven,
+        reactor maturing); the resolution + caching path is the most mature.
+        On Windows, use <code>--no-daemon</code> to fork to <code>mvn</code> for
+        builds. See <a href="/docs/getting-started">Getting started</a>.
       </p>
     </>
   );
