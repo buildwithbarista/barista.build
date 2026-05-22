@@ -1918,3 +1918,75 @@ footer .links { display: flex; gap: 22px; }
   font-size: 14px;
   line-height: 1.6;
 }
+
+/* ---- /releases page ------------------------------------------------------ */
+.releases-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 0 96px;
+}
+.releases-main .rel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 16px;
+  margin-bottom: 16px;
+}
+.releases-main .rel-head .pill {
+  margin-left: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-dim);
+  border-radius: 999px;
+  padding: 2px 9px;
+  vertical-align: middle;
+}
+.releases-main .rel-date {
+  font-size: 13px;
+  color: var(--fg-3);
+}
+.releases-main .vbadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 18px;
+}
+.releases-main .vbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--fg-2);
+  background: var(--bg-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 4px 11px;
+}
+.releases-main .vbadge span[aria-hidden] {
+  color: var(--accent);
+  font-weight: 700;
+}
+.releases-main .rel-bundled {
+  font-size: 13px;
+  color: var(--fg-3);
+  margin: 0 0 8px;
+}
+.releases-main code.sha {
+  font-size: 11px;
+  color: var(--fg-4);
+  word-break: break-all;
+  background: none;
+  padding: 0;
+}
+.releases-main .sub-dl {
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.releases-main td.nowrap,
+.releases-main th.nowrap {
+  white-space: nowrap;
+}

@@ -27,6 +27,9 @@ export default function Home() {
             <Link href="/docs/getting-started" className="hide-sm">
               Docs
             </Link>
+            <Link href="/releases" className="hide-sm">
+              Releases
+            </Link>
             <a href={BENCH} className="hide-sm">
               Benchmarks
             </a>

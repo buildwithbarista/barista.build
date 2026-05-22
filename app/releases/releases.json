@@ -1,0 +1,88 @@
+{
+  "repo": "buildwithbarista/barista",
+  "releases": [
+    {
+      "version": "0.1.0-alpha.1",
+      "tag": "v0.1.0-alpha.1",
+      "date": "2026-05-22",
+      "prerelease": true,
+      "channel": "alpha",
+      "commit": "f136e31b63fc068f863071f1606683a1e1eb8b15",
+      "verified": {
+        "cosign": true,
+        "slsa": true,
+        "sbom": true,
+        "reproducibleLinux": true,
+        "macosNotarized": true
+      },
+      "bundled": {
+        "maven": "4.0.0-rc-3",
+        "rustc": "1.88.0"
+      },
+      "artifacts": [
+        {
+          "platform": "Linux",
+          "arch": "x86-64",
+          "target": "x86_64-unknown-linux-gnu",
+          "file": "barista-0.1.0-alpha.1-x86_64-unknown-linux-gnu.tar.gz",
+          "size": 34542696,
+          "sha256": "5b12c72155a8ad91de8d2746263a87a61323423cbbe2a159e6143409167786d1"
+        },
+        {
+          "platform": "Linux",
+          "arch": "ARM64",
+          "target": "aarch64-unknown-linux-gnu",
+          "file": "barista-0.1.0-alpha.1-aarch64-unknown-linux-gnu.tar.gz",
+          "size": 34125008,
+          "sha256": "92242c668353ce33ecb9c78bf3986450794ba4014b43ded0941b7efed55c7a48"
+        },
+        {
+          "platform": "macOS",
+          "arch": "Apple Silicon",
+          "target": "aarch64-apple-darwin",
+          "file": "barista-0.1.0-alpha.1-aarch64-apple-darwin.tar.gz",
+          "size": 34082245,
+          "sha256": "a564f14c41d0a1c81a110a22c613a74a1a9b57ce1eeb5ef6b0097cba5da303de"
+        },
+        {
+          "platform": "macOS",
+          "arch": "Intel",
+          "target": "x86_64-apple-darwin",
+          "file": "barista-0.1.0-alpha.1-x86_64-apple-darwin.tar.gz",
+          "size": 34539825,
+          "sha256": "c1ecb054aa7bd3e915464d02050e714dea7ecf07758604988dcb537c0b1b33f5"
+        },
+        {
+          "platform": "Windows",
+          "arch": "x86-64",
+          "target": "x86_64-pc-windows-msvc",
+          "file": "barista-0.1.0-alpha.1-x86_64-pc-windows-msvc.zip",
+          "size": 34353628,
+          "sha256": "900e111bf3b5863411a375441a07a07025c0e20960cbc8fc07ab57add4216f6c"
+        }
+      ],
+      "sboms": [
+        {
+          "label": "Combined (product)",
+          "format": "CycloneDX",
+          "file": "barista-0.1.0-alpha.1-sbom.cdx.json",
+          "size": 596931
+        },
+        {
+          "label": "Rust crates",
+          "format": "CycloneDX",
+          "file": "barista-0.1.0-alpha.1-sbom-rust.cdx.json",
+          "size": 391069
+        },
+        {
+          "label": "Java (barback)",
+          "format": "CycloneDX",
+          "file": "barista-0.1.0-alpha.1-sbom-java.cdx.json",
+          "size": 211061
+        }
+      ],
+      "provenance": "multiple.intoto.jsonl",
+      "manifest": "barista-0.1.0-alpha.1-build-manifest.json"
+    }
+  ]
+}

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { DocsNav } from "@/components/docs-nav";
 
 const GITHUB = "https://github.com/buildwithbarista/barista";
 const BENCH = "https://bench.barista.build";
 
-export default function DocsLayout({
+export default function ReleasesLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -21,10 +20,10 @@ export default function DocsLayout({
             <Link href="/" className="hide-sm">
               Home
             </Link>
-            <Link href="/docs/getting-started" className="active hide-sm">
+            <Link href="/docs/getting-started" className="hide-sm">
               Docs
             </Link>
-            <Link href="/releases" className="hide-sm">
+            <Link href="/releases" className="active hide-sm">
               Releases
             </Link>
             <a href={BENCH} className="hide-sm">
@@ -40,9 +39,8 @@ export default function DocsLayout({
         </div>
       </nav>
 
-      <div className="wrap docs-layout">
-        <DocsNav />
-        <main className="docs-main">{children}</main>
+      <div className="wrap">
+        <main className="docs-main releases-main">{children}</main>
       </div>
 
       <footer className="wrap">
@@ -55,6 +53,7 @@ export default function DocsLayout({
         <div className="links">
           <a href={GITHUB}>GitHub</a>
           <Link href="/docs/getting-started">Docs</Link>
+          <Link href="/releases">Releases</Link>
           <a href={BENCH}>Benchmarks</a>
         </div>
       </footer>
