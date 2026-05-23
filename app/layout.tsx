@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const interTight = Inter_Tight({
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body>
         <div className="grain" aria-hidden="true" />
         {children}
+        <Analytics />
       </body>
     </html>
   );
